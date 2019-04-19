@@ -2,7 +2,7 @@
   today-weather works!
 </p> -->
 <!-- <button (click)=" displayWeatherData()">Today Weather Data</button> -->
-<div class="container" *ngIf="todayWeatherData">
+<div class="alert alert-dark" role="alert" *ngIf="todayWeatherData">
 
   <h3>Today</h3>
   <h4>{{todayWeatherData.list[0].dt*1000|date:"fullDate"}}</h4>

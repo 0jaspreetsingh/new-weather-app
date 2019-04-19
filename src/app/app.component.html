@@ -1,7 +1,14 @@
 <header>
     <h1>Weather Search</h1>
-    <input type="text" name="" id="" [(ngModel)]="city">
-    <button (click)="getData()">Get Weather Data</button>
+    <!-- <input type="text" class="form-control" aria-label="Enter City" placeholder="Enter City" name="" id="" [(ngModel)]="city">
+    <button class="btn btn-primary" (click)="getData()">Search <i class="fas fa-search"></i></button> -->
+    <div class="input-group mb-3">
+            <input type="text" [(ngModel)]="city" class="form-control" placeholder="Enter City" aria-label="Enter City" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button" id="button-addon2" (click)="getData()">Search <i class="fas fa-search"></i></button>
+            </div>
+          </div>
+          
 </header>
 
 <app-today-weather [todayWeatherData]="locationWeather"></app-today-weather>

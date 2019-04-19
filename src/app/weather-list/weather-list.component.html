@@ -1,5 +1,6 @@
 <div class="container" *ngIf="todayWeatherData">
-  <table id="WeatherDetailList">
+  <h3>Forecast</h3>
+  <table style="width:100%" class="table table-striped">
     <tr>
       <th>Date</th>
       <th>Temperature</th>
@@ -8,11 +9,16 @@
       <th>Pressure</th>
       <th>Sea Level</th>
     </tr>
-    <div class="weatherList" *ngFor="let weatherData of todayWeatherData.list; let idx=index">
-      <div class="weatherListItem" *ngIf="idx%8===0&&idx!=0">
-        <app-weather-list-item [weatherListItem]="weatherData"></app-weather-list-item>
-        <!-- <h4>{{weatherData.dt*1000|date:"fullDate"}}</h4> -->
-      </div>
-    </div>
+    <tbody *ngFor="let weatherData of todayWeatherData.list; let idx=index">
+      <tr *ngIf="idx%8===0&&idx!=0">
+        <td>{{weatherData.dt*1000|date:"fullDate"}}</td>
+        <td>{{(weatherData.main.temp-273.15).toPrecision(2)}}°C <img src="https://openweathermap.org/img/w/{{weatherData.weather[0].icon}}.png"
+          alt="No image"></td>
+        <td>{{weatherData.clouds.all}}%</td>
+        <td>{{weatherData.main.humidity}}%</td>
+        <td>{{weatherData.main.pressure}} hPa</td>
+        <td>{{weatherData.main.sea_level}} hPa</td>
+      </tr>
+    </tbody>
   </table>
 </div>
