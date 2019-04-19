@@ -1,0 +1,22 @@
+<!-- <p>
+  today-weather works!
+</p> -->
+<!-- <button (click)=" displayWeatherData()">Today Weather Data</button> -->
+<div class="container" *ngIf="todayWeatherData">
+
+  <h3>Today</h3>
+  <h4>{{todayWeatherData.list[0].dt*1000|date:"fullDate"}}</h4>
+  <h3>{{todayWeatherData.city.name}} | {{todayWeatherData.city.country}} <img src="https://openweathermap.org/img/w/{{todayWeatherData.list[0].weather[0].icon}}.png"
+      alt="No image"></h3>
+  <h5>{{todayWeatherData.list[0].weather[0].main}}</h5>
+  <h1>{{(todayWeatherData.list[0].main.temp-273.15).toPrecision(2)}}°C</h1>
+  <h6>Chance of Rain: {{todayWeatherData.list[0].clouds.all}}%</h6>
+  <h6>Population: {{todayWeatherData.city.population}}</h6>
+  <h6>Humidity: {{todayWeatherData.list[0].main.humidity}}%</h6>
+  <h6>Pressure: {{todayWeatherData.list[0].main.pressure}} hPa</h6>
+  <h6>Sea Level: {{todayWeatherData.list[0].main.sea_level}} hPa</h6>
+  <h6>Wind Speed: {{todayWeatherData.list[0].wind.speed}} m/s</h6>
+  <h6>{{todayWeatherData.list[0].weather[0].description}}</h6>
+</div>
+<!-- <h2 *ngIf="todayWeatherData">{{todayWeatherData.city.name}}</h2> -->
+<!-- <h2>{{todayWeatherData.city.name}}</h2> -->

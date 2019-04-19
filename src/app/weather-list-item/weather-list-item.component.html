@@ -1,0 +1,15 @@
+<h4>{{weatherListItem.dt*1000|date:"fullDate"}}</h4>
+<tr>
+        <!-- <th>Date</th>
+        <th>Temperature</th>
+        <th>Chance of Rain</th>
+        <th>Humidity</th>
+        <th>Pressure</th>
+        <th>Sea Level</th> -->
+    <td><h6>{{weatherListItem.dt*1000|date:"fullDate"}}</h6></td>
+    <td>{{weatherListItem.main.temp}}</td>
+    <td>{{weatherListItem.clouds.all}}</td>
+    <td>{{weatherListItem.main.humidity}}</td>
+    <td>{{weatherListItem.main.pressure}}</td>
+    <td>{{weatherListItem.main.sea_level}}</td>
+</tr>
